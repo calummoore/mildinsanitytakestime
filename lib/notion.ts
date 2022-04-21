@@ -14,12 +14,14 @@ export const getDatabase = async (databaseId: string) => {
     const blocks = await getBlocks(res.id)
     const image = blocks.find(({ type }) => type === 'image')
     return {
+      date: res.properties.date?.date?.start ?? res.last_edited_time,
       image,
       slug: res.properties.slug.rich_text[0].plain_text,
       ...res,
     }
   }))
   return pages.filter(({ properties }) => properties.published.checkbox === true)
+    .sort((a, b) => +new Date(b.date) - +new Date(a.date))
 }
 
 export const getPageBySlug  = async (databaseId: string, slug: string) => {

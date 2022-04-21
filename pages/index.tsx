@@ -13,7 +13,7 @@ export default function Home ({ posts }: any) {
     <Layout>
       <Container maxW='container.lg' mt={14}>
         <Stack spacing={12} divider={<Divider />}>
-          <Stack divider={<Divider />} maxW='2xl'>
+          <Stack divider={<Divider />} maxW='2xl' spacing={20}>
             {posts.map((post: any) => {
               const date = new Date(post.properties.date?.date?.start ?? post.last_edited_time).toLocaleString(
                 'en-US',
