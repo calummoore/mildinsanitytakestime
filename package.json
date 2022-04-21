@@ -1,5 +1,5 @@
 {
-  "name": "zeplo-home",
+  "name": "mildinsanitytakestime",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3001",
