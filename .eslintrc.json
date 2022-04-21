@@ -1,0 +1,21 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "indent": ["error", 2],
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ],
+    "object-curly-spacing": [
+      2,
+      "always"
+    ],
+    "space-before-function-paren": [
+      "error",
+      "always"
+    ],
+    "no-trailing-spaces": "error"
+  }
+}

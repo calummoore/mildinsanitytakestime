@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mildinsanitytakestime.com
+
+# Sitemaps
+Sitemap: https://mildinsanitytakestime.com/sitemap.xml
