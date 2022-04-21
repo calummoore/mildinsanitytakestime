@@ -27,12 +27,12 @@ function MyApp ({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" key="og:type"/>
         <meta property="og:title" content={canonicalTitle} key="og:title"/>
         <meta property="og:description" content={canonicalDescription} key="og:description" />
-        <meta property="og:image" content="https://mildinsanitytakestime/overview.png" key="og:image"/>
+        <meta property="og:image" content="https://mildinsanitytakestime.com/img/bear.png" key="og:image"/>
 
         <meta property="twitter:card" content="summary_large_image" key="twitter:card"/>
         <meta property="twitter:title" content={canonicalTitle} key="twitter:title"/>
         <meta property="twitter:description" content={canonicalDescription} key="twitter:description"/>
-        <meta property="twitter:image" content="https://mildinsanitytakestime/overview.png" key="twitter:image"/>
+        <meta property="twitter:image" content="https://mildinsanitytakestime.com/img/bear.png" key="twitter:image"/>
       </Head>
       <GoogleAnalytics />
       <ChakraProvider theme={theme}>
