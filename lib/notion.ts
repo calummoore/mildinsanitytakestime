@@ -16,7 +16,7 @@ export const getDatabase = async (databaseId: string) => {
     return {
       date: res.properties.date?.date?.start ?? res.last_edited_time,
       image,
-      slug: res.properties.slug.rich_text[0].plain_text,
+      slug: res.properties.slug?.rich_text?.[0]?.plain_text,
       ...res,
     }
   }))
