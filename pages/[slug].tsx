@@ -9,6 +9,8 @@ import styles from '../components/notion/post.module.css'
 import markdownStyles from '../styles/markdown-styles.module.css'
 import { Layout } from '../components/Layout'
 
+const databaseId = 'eee64cdfb9934e21bd03c7e1827bb189'
+
 
 export default function Post ({ page, blocks }: any) {
   if (!page || !blocks) {
@@ -17,7 +19,6 @@ export default function Post ({ page, blocks }: any) {
 
   const imageBlock = blocks.find(({ type }: any) => type === 'image')
 
-
   const title = `${page.properties.Name.title[0].plain_text} | MildInsanityTakesTime`
   const desc = page.properties.summary.rich_text[0].plain_text
   const image = imageBlock.image?.file?.url ?? imageBlock.image?.external?.url
@@ -25,7 +26,7 @@ export default function Post ({ page, blocks }: any) {
   return (
     <Layout>
       <Head>
-        <title>{page.properties.Name.title[0].plain_text}</title>
+        <title>{title}</title>
         <meta name="title" content={title} key="title"/>
         <meta name="description" content={desc} key="description"/>
 
@@ -64,7 +65,7 @@ export default function Post ({ page, blocks }: any) {
 }
 
 export const getStaticPaths = async () => {
-  const database = await getDatabase('eee64cdfb9934e21bd03c7e1827bb189')
+  const database = await getDatabase(databaseId)
   return {
     paths: database.map((page) => ({ params: { slug: page.slug } })),
     fallback: true,
@@ -73,7 +74,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context: any) => {
   const { slug } = context.params
-  const page = await getPageBySlug('eee64cdfb9934e21bd03c7e1827bb189', slug)
+  const page = await getPageBySlug(databaseId, slug)
   const blocks = await getBlocks(page.id)
 
   // Retrieve block children for nested blocks (one level deep), for example toggle blocks

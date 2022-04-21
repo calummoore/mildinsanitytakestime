@@ -67,9 +67,3 @@ export const getBlocks = async (blockId: string) => {
     }
   }))
 }
-
-export const getFirstImage = async (blockId: string) => {
-  const blocks = await getBlocks(blockId)
-
-  return
-}
