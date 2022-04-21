@@ -15,7 +15,7 @@ export function Logo ({ href = '/', width = '120px', height = '34px', onClick }:
     <Link href={href}>
       <a onClick={onClick}>
         <Center>
-          <Heading fontSize='2xl'>
+          <Heading fontSize={['lg', '2xl', '2xl']}>
             Mild
             <Box as='span' color='gray.200'>/</Box>Insanity
             <Box as='span' color='gray.200'>/</Box>Takes

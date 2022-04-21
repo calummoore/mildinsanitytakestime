@@ -87,13 +87,13 @@ export function Layout ({ children, name, desc }: LayoutProps) {
                 <Spacer />
                 <Box>
                   {isMobile ? (
-                    <Box width={'48px'} position='absolute' right={1} top={-1}>
+                    <Box width={['30px', '48px', '48px']} position='absolute' right={1} top={-1}>
                       <IconButton
                         borderRadius='full'
                         onClick={onOpen}
                         aria-label='menu'
-                        size='lg'
-                        icon={<Image src={lines} alt='menu' width={24} />}
+                        size='md'
+                        icon={<Image src={lines} alt='menu' width={18} />}
                       />
                     </Box>
                   ) : (
