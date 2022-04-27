@@ -21,7 +21,7 @@ export default function Post ({ page, blocks }: any) {
 
   const title = `${page.properties.Name.title[0].plain_text} | MildInsanityTakesTime`
   const desc = page.properties.summary.rich_text[0].plain_text
-  const image = imageBlock.image?.file?.url ?? imageBlock.image?.external?.url
+  const image = `https://mildinsanitytakestime.com/_next/image?url=${imageBlock.image?.file?.url ?? imageBlock.image?.external?.url}`
 
   return (
     <Layout>
